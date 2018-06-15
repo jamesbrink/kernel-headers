@@ -11,7 +11,7 @@ FILE_NAME=$PACKAGE_NAME.pkg.tar.xz
 
 # Download and extract package.
 echo "Downloading Arch linux package: $FILE_NAME"
-curl "$REPO_URL/$FILE_NAME" --output $SRC/$FILE_NAME
+curl "$REPO_URL/$FILE_NAME" --output "$SRC/$FILE_NAME"
 xz -fd "$SRC/$FILE_NAME"
 mkdir -p $DEST
 tar xf "$SRC/$PACKAGE_NAME.pkg.tar" -C $DEST
