@@ -6,7 +6,7 @@ DEST=/
 REPO_URL="https://archive.archlinux.org/packages/l/linux-headers"
 VERSION=$(uname -r|sed 's/\-ARCH//g')
 ARCH=$(uname -m)
-PACKAGE_NAME=linux-headers-$VERSION-$ARCH
+PACKAGE_NAME=linux-headers-$(echo $VERSION-$ARCH | sed 's/-arch/\.arch/g')
 FILE_NAME=$PACKAGE_NAME.pkg.tar.xz
 
 # Download and extract package.
